@@ -7,9 +7,10 @@ while(Number.isNaN(integer)|| !Number.isInteger(integer)|| !min>integer|| !integ
     let integer = Number(readlineSync.question("Positive integer: "));
 }
 while (integer > 0) {
-      reverse *= 10
-      reverse += integer % 10
-      integer -= integer % 10
-      integer /= 10
+      reverse *= 10;
+      reverse += integer % 10;
+      integer -= integer % 10;
+      integer /= 10;
   }
+
 console.log("\n"+reverse+"\n");
