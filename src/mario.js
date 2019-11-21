@@ -1,16 +1,21 @@
 const readlineSync = require("readline-sync");
-const min = 1;
-const max = 24;
-let length = Number(readlineSync.question("Height: "));
-let height = Number(readlineSync.question("Height: "));
+const MIN = 1;
+const MAX = 24;
+let length = [];
+let height = Number(readlineSync.question("\nHeight: "));
 
-while(Number.isNaN(length)|| Number.isNaN(height)|| !Number.isInteger(length)|| !Number.isInteger(height) || !Number.MIN_SAFE_INTEGER>length||length>Number.MAX_SAFE_INTEGER|| Number.MIN_SAFE_INTEGER > height||height > Number.MAX_SAFE_INTEGER){
-  length = Number(readlineSync.question("Height: "));
+while( Number.isNaN(height)|| !Number.isInteger(height) ||MIN > height||height > MAX){
   height = Number(readlineSync.question("Height: "));
 }
-for (i = 0; i < 5; i++) {
-  console.log("*");
-}
-  for (j = 1; j <= i; j++) {
-    console.log('*');
+console.log();
+for(let x = 1; x < height+1; x++){
+  for(let y =0; y <height-x; y++){
+    length.push(" ");
   }
+for(let y = 0; y < x + 1; y++){
+    length.push("#")
+  }
+console.log(length.join(""));
+length = [];
+}
+console.log("\n");
