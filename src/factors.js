@@ -8,8 +8,4 @@ while(integer <= MIN || integer >= MAX||Number.isNaN(integer) || !Number.isInteg
   integer = Number(readlineSync.question("Positive integer: "));
 }
 
-while(integer%number==0){
-  str = str + number;
-  number++
-}
-console.log(number);
+for(let i =
