@@ -1,19 +1,20 @@
 const readlineSync = require("readline-sync");
 const MIN = 0;
 const MAX = Number.MAX_SAFE_INTEGER;
-let positiveInteger = Number(readlineSync.question("\nNon-negative integer: "));
+let positiveInteger  = Number(readlineSync.question("\nNon-negative integer: "));
 let number;
 
-while(positiveInteger <= MIN || positiveInteger >= MAX||Number.isNaN(positiveInteger) || !Number.isInteger(positiveInteger )){
+while(positiveInteger < MIN || positiveInteger > MAX||Number.isNaN(positiveInteger) || positiveInteger % 1 !=0){
   positiveInteger = Number(readlineSync.question("Non-negative integer: "));
 }
 
 for(let i = 2; i < positiveInteger; i++){
-  positiveInteger % i == 0
+  if(positiveInteger % i == 0){
   number = "Not Prime.";
+  break;
 }
-for(let i = 2; i < positiveInteger; i++){
-  positiveInteger == 1 || positiveInteger ==2
+else{
   number = "Prime."
-      }
-console.log("\n"+number+"\n");
+     }
+   }
+ console.log("\n"+number+"\n");

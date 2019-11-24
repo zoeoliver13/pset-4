@@ -1,11 +1,11 @@
 const readlineSync = require("readline-sync");
 const min = 0;
 const max = Number.MAX_SAFE_INTEGER;
-let positiveInteger;
+let positiveInteger = 0;
 let average = 0;
 let amount = 0;
 console.log("");
-while(Number.isNaN(positiveInteger)|| !Number.isInteger(positiveInteger)|| positiveInteger > min ){
+while(Number.isNaN(positiveInteger)|| !Number.isInteger(positiveInteger)|| positiveInteger >= min ){
   positiveInteger = Number(readlineSync.question("Non-negative integer: "));
   if(positiveInteger>min && positiveInteger<max){
     average+=positiveInteger;

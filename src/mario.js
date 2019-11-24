@@ -1,17 +1,22 @@
 const readlineSync = require("readline-sync");
 const MIN = 1;
 const MAX = 24;
-let rows = Number(readlineSync.question("\nHeight: "));
-output="";
-
-while( Number.isNaN(rows)|| !Number.isInteger(rows) ||MIN > rows||rows > MAX){
-  rows = Number(readlineSync.question("Height: "));
+let height;
+let mario;
+console.log();
+while( Number.isNaN(height)|| !Number.isInteger(height) ||MIN > height||height > MAX){
+  height = Number(readlineSync.question("Height: "));
 }
-for(let i = 1; i <= rows+1; i++){
-  for(let x = 0; x <= i-1; x++){
-    output+=(" ");
-  }for(let x = 0; x <= i+1; x++){
-    output+=("#");
-    console.log(output);
-  }
+console.log()
+let row = height
+while (row > 0) {
+    mario = ""
+    for (let i = 0; i <= height; i++) {
+        mario = mario + "#"
+    }for (i = 0; i < row - 1; i++) {
+        mario = mario.replace(mario.charAt(i), " ");
+    }
+    console.log(mario);
+    row = row - 1
 }
+console.log();
